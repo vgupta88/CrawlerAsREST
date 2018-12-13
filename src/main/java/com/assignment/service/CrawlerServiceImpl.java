@@ -70,7 +70,8 @@ public class CrawlerServiceImpl implements CrawlerService {
 					continue;
 				System.out.println("Link: "+link.attr("abs:href"));
 				String linkUrl = link.absUrl("href");
-				if(linkUrl.contains(url)) {
+				String rootUrl=url.replaceAll("https://", "").replaceAll("http://", "");
+				if(linkUrl.contains(rootUrl)) {
 					if (!linkUrl.matches(noPageRegEx)) { 
 						for (String regex : fileRegEx) {
 							if (linkUrl.matches(regex)) {
@@ -80,6 +81,7 @@ public class CrawlerServiceImpl implements CrawlerService {
 						}
 
 						if (!internalLinks.contains(linkUrl) && !linkUrl.equals("")) 
+							internalLinks.add(linkUrl);
 							process(linkUrl);
 					}
 				} else { 
