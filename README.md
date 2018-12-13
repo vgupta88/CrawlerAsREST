@@ -17,7 +17,7 @@ This project is a basic Spring boot application for crawling any url provided as
 $ mvn spring-boot:run
 ```
 ## API
-- GET /api/crawl/url=<url>
+- GET /api/crawl/url=URL
 
 ## TODO 
 - Improve performance for large number of links
