@@ -1,7 +1,7 @@
 # CrawlerAsREST
 
 
-This project is a basic Spring boot application for crawling any url provided as per GET /api/{url}/crawl
+This project is a basic Spring boot application for crawling any url provided as per GET /api/crawl?url=<url>
 
 ## Requirement
   - JDK 1.8
@@ -16,8 +16,9 @@ This project is a basic Spring boot application for crawling any url provided as
 ```sh
 $ mvn spring-boot:run
 ```
+## API
+- GET /api/crawl/url=URL
 
 ## TODO 
 - Improve performance for large number of links
-- Test all Http connections
-- Support for Https
+- Test all Http connections to internal links and capture status codes
