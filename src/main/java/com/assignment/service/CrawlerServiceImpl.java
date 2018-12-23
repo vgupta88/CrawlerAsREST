@@ -57,7 +57,6 @@ public class CrawlerServiceImpl implements CrawlerService {
 				String imageUrl = image.attr("abs:data-src");
 				if(imageUrl.equals(""))
 					imageUrl = image.attr("abs:src");
-				// It is an image --> add to list
 				if (!imageLinks.contains(url) && !imageUrl.equals("")) 
 					imageLinks.add(imageUrl);
 
